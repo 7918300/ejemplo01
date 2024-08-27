@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.grid-container > * {
+    box-shadow: 10px 6px 37px -13px rgba(196, 4, 4, 0.74);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+    grid-template:
+    "header" 100px
+    "navbar" 50px
+    "main"
+    "aside"
+    "footer" 100px;
+
+    .header {
+        grid-area: header;
+        background-color: #aeff9a;
+    }
+
+    .navbar {
+        grid-area: navbar;
+        background-color: #FFB7B2;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #FFDAC1;
+    }
+
+    .aside {
+        grid-area: aside;
+        background-color: #E2F0CB;
+    }
+
+    .footer {
+         grid-area: footer;
+         background-color: #411e47;
+    }
+
+    @media (min-width: 768px) {
+        grid-template:
+        "header navbar" 150px
+        "aside main"
+        "footer footer" 150px/200px auto;
+    }
+
+    @media (min-width: 1279px) {
+        grid-template:
+        "header header header" 200px
+        "navbar main aside"
+        "footer footer footer" 200px/150px auto 150px;
+    }
+}
